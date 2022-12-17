@@ -3,6 +3,7 @@ import styles from "../Users/AddUser.module.css";
 import Button from "../UI/Button";
 import { useState } from "react";
 import ErrorModal from "../UI/ErrorModal";
+import Wraper from "../Helpers/Wraper";
 
 const AddUser = (props) => {
   const [entedUsername, setEnterdUsername] = useState("");
@@ -42,7 +43,7 @@ const AddUser = (props) => {
   };
 
   return (
-    <div>
+    <Wraper>
       {error && (
         <ErrorModal
           title={error.title}
@@ -50,7 +51,6 @@ const AddUser = (props) => {
           onConfirm={errorHandler}
         />
       )}
-
       <Card className={styles.input}>
         <form onSubmit={AddUserHandler}>
           <label htmlFor="name">Name</label>
@@ -70,7 +70,7 @@ const AddUser = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Wraper>
   );
 };
 export default AddUser;

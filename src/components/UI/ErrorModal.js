@@ -1,10 +1,10 @@
 import Card from "./Card";
 import Button from "./Button";
 import classes from "../UI/ErrorModal.module.css";
-
+import Wraper from "../Helpers/Wraper";
 const ErrorModal = (props) => {
   return (
-    <div>
+    <Wraper>
       <div className={classes.backdrop} onClick={props.onConfirm}></div>
       <Card className={classes.modal}>
         <header className={classes.header}>{props.title}</header>
@@ -15,7 +15,7 @@ const ErrorModal = (props) => {
           <Button onClick={props.onConfirm}> Okay </Button>
         </footer>
       </Card>
-    </div>
+    </Wraper>
   );
 };
 export default ErrorModal;
